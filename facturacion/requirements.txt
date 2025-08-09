@@ -1,0 +1,10 @@
+# Para conexión a MariaDB
+pymysql
+python-dotenv
+requests
+flask
+flask_sqlalchemy
+pymysql
+pika
+python-dotenv
+flask-sqlalchemy

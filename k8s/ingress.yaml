@@ -1,0 +1,49 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+	name: microservicios-ingress
+spec:
+	rules:
+	- host: microservicios.local
+		http:
+			paths:
+			- path: /
+				pathType: Prefix
+				backend:
+					service:
+						name: central-core
+						port:
+							number: 5000
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+	name: microservicios-ingress
+spec:
+	rules:
+		- host: microservicios.local
+			http:
+				paths:
+					- path: /
+						pathType: Prefix
+						backend:
+							service:
+								name: central-core
+								port:
+									number: 5000
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+	name: microservicios-ingress
+spec:
+	rules:
+		- host: microservicios.local
+			http:
+				paths:
+					- path: /
+						pathType: Prefix
+						backend:
+							service:
+								name: central-core
+								port:
+									number: 5000

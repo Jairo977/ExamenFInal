@@ -1,0 +1,11 @@
+pymysql
+cryptography
+# Para conexión a MySQL
+pymysql
+mysql-connector-python
+requests
+flask
+flask_sqlalchemy
+pika
+python-dotenv
+mysql-connector-python

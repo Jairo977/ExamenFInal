@@ -1,0 +1,9 @@
+# Para conexión a PostgreSQL
+psycopg2-binary
+pika
+python-dotenv
+requests
+flask
+flask_sqlalchemy
+pika
+python-dotenv

@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+	name: central-core
+spec:
+	replicas: 1
+	selector:
+		matchLabels:
+			app: central-core
+	template:
+		metadata:
+			labels:
+				app: central-core
+		spec:
+			containers:
+				- name: central-core
+					image: tuusuario/central-core:latest
+					ports:
+						- containerPort: 5000
+					envFrom:
+						- configMapRef:
+								name: microservicios-config
+				- secretRef:
+						name: microservicios-secrets
+apiVersion: v1
+kind: Service
+metadata:
+	name: central-core
+spec:
+	selector:
+		app: central-core
+	ports:
+	- port: 5000
+		targetPort: 5000
+	type: ClusterIP
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+	name: central-core
+spec:
+	replicas: 1
+	selector:
+		matchLabels:
+			app: central-core
+	template:
+		metadata:
+			labels:
+				app: central-core
+		spec:
+			containers:
+				- name: central-core
+					image: tuusuario/central-core:latest
+					ports:
+						- containerPort: 5000
+					envFrom:
+						- configMapRef:
+								name: microservicios-config
+								- secretRef:
+										name: microservicios-secrets
+		---
+		apiVersion: v1
+		kind: Service
+		metadata:
+			name: central-core
+spec:
+	selector:
+		app: central-core
+	ports:
+		- port: 5000
+			targetPort: 5000
+	type: ClusterIP
+	type: ClusterIP

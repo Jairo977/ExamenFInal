@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+data:
+	name: microservicios-config
+data:
+	POSTGRES_DB: central_db
+	MYSQL_DB: inventory_db
+	MARIA_DB: billing_db
+	RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672/
+	CENTRAL_API: http://central-core:5000
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+data:
+	name: microservicios-config
+data:
+	POSTGRES_DB: central_db
+	MYSQL_DB: inventory_db
+	MARIA_DB: billing_db
+	RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672/
+	CENTRAL_API: http://central-core:5000
